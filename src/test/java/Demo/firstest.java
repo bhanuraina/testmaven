@@ -11,11 +11,11 @@ import org.testng.annotations.DataProvider;
 public class firstest {
 
 	WebDriver dri;
-	@Test(dataProvider = "dp")
+	@Test
 	public void testcase1(String n , String s) throws InterruptedException
 	{
-		dri.findElement(By.xpath("//*[@id='txtUsername']")).sendKeys(n);
-		dri.findElement(By.xpath("//*[@id='txtPassword']")).sendKeys(s);
+		dri.findElement(By.xpath("//*[@id='txtUsername']")).sendKeys("linda.anderson");
+		dri.findElement(By.xpath("//*[@id='txtPassword']")).sendKeys("linda.anderson");
 		dri.findElement(By.xpath("//*[@id='btnLogin']")).click();
 		Thread.sleep(3000);
 		dri.findElement(By.xpath("//*[@id='welcome']")).click();
@@ -24,13 +24,7 @@ public class firstest {
 		Thread.sleep(200);
 	}
 	
-	@DataProvider
-	public Object[][] dp()	{
-		return new 	Object[][] {
-			new Object[][] { "Admin", "admin123" },
-			new Object[][] { "lina.anderson", "linda.anderson" },
-		};
-	}
+	
 	@BeforeTest
 	public void beforeTest()
 	{
